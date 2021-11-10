@@ -1,0 +1,65 @@
+@import url(https://fonts.googleapis.com/css?family=Roboto:400);
+body{
+    background-color: rgb(216, 216, 216);
+}
+form{
+  padding: 60px;
+  max-width: 400px;
+  background-color: #999999;
+  margin: 0 auto;
+}
+
+form input, form textarea{
+  margin-bottom: 15px;
+  font-family: "Roboto", sans-serif;
+  width: 100%;
+  padding: 10px;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box; 
+  border: none; 
+  color: #105e9e; 
+  font-size: 1em;
+  resize: horizontal; 
+}
+
+form button {
+	display: block;
+	background-color: #616161;
+	padding: 10px 45px 10px 45px;
+	border: 0;
+	font-size: 1em; 
+	color: 	white;
+  font-family: "Roboto", sans-serif;
+}
+form button:hover{
+	background-color: #1478a7;
+}
+textarea{ resize: none; }
+h3{
+    text-align: center;
+    font-family: "Roboto", sans-serif;
+    color: rgb(58, 58, 58);
+}
+h4{
+    text-align: left;
+    font-family: "Roboto", sans-serif;
+    color: rgb(102, 102, 102);
+}
+.boton1{ /* diseño de mi boton  */
+    display: inline-block;
+    text-align: center;
+    text-decoration: none;
+    font-family: "Roboto", sans-serif;
+    margin-left: 2rem; /* root  */
+    margin-bottom: 2.8rem; /* root  */
+    padding: 0.4rem 0.75rem;
+    border: 1px solid rgb(10, 86, 173);
+    list-style: none;
+    color: rgb(10, 86, 173);
+}
+
+.boton1:hover{ /* cuando el mouse esta sobre el boton  */
+    background: rgb(10, 86, 173);
+    color:#fff;
+    cursor: pointer;
+}

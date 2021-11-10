@@ -1,0 +1,199 @@
+:root{ /* ya estan definidos para poder usarlos mas adelante en el codigo  */
+  --color1: rgb(167, 167, 167);
+  --espacios: 0.63rem;
+  --espacios-contenido: 2.8rem;
+}
+
+* { /* este para todo  */
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body { /* la fuente del body y el fondo  */
+  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+  background: #ffffff;
+}
+
+/* Header */
+header{ /* mi header es toda la seccion con el titulo  */
+  width: 100%;
+  height:46rem;
+  background: linear-gradient(to bottom, /* degradados sobre imagen de fondo  */
+  rgba(199, 199, 199, 0.6),
+  rgba(165, 165, 165, 0.548),
+  rgba(143, 143, 143, 0.45)
+  ), url(img/hospital.jpg);
+  background-attachment: fixed; /* que no se mueva la imagen  */
+  background-position: center;
+  background-size: cover;
+}
+.header-otros{ /* este es para los header de las demas practicas  */
+  width: 100%;
+  height:38rem;
+  background: rgba(48, 48, 48, 0.664);
+}
+.header-practicas{ /* este es para los header de las demas practicas  */
+  width: 100%;
+  height:20rem;
+}
+nav{ /* esta es la barra de navegacion donde esta inicio practicas y contacto  */
+  width: 100%;
+  position: fixed; /* no se mueve  */
+  box-shadow: 0 0 0.63rem 0 rgba(75, 75, 75, 0.5); /* sombra  */
+  background: rgba(255, 255, 255, 0.5);
+  height: 5rem;
+  color:rgb(25, 106, 143);
+}
+
+.contenedor-nav{ /* como esta mi clase, es contendor para ajustar y dejar margen  */
+  display: flex;
+  margin: auto;
+  width: 90%;
+  justify-content: space-between;
+  align-items: center;
+  text-align: center;
+  max-width:62.5rem;
+  height:inherit;
+  overflow: hidden;
+}
+
+nav .enlaces a{ /* para los enlaces de la barra superior  */
+  display: inline-block;
+  padding: 0.3rem 0;
+  margin-right: 1.1rem;
+  font-size: 1.1rem;
+  font-weight: 200;
+  text-decoration: none;
+  border-bottom: 0.2rem solid transparent;
+  color: inherit;
+}
+
+nav .enlaces a:hover{ /* cuando pasas el mouse sobre los enlaces  */
+  border-bottom: 0.2rem solid #0099ff;
+  transition: 0.6s;
+}
+
+.logo, .logo img{ height:5rem;} /* tamaño logos  */
+
+.textos{ /* para los titulos  */
+  width: 100%;
+  height: 100%;
+  display:flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  color:rgb(25, 106, 143);
+  overflow: hidden;
+  text-align: center;
+}
+.h1-otros{ /* reduce el margen superior de los titulos de otras paginas que no sean index  */
+  margin-top: 6rem;
+}
+.textos>h1{font-size:4.5rem;;} /* tamaño fuente especifico h1  */
+
+.textos>h2{font-size: 2rem; font-weight: 300; margin-bottom: 2rem;} /* tamaño fuente especifico h2  */
+
+.textos>img{margin-top: 3rem;} /* es para mi imagen dentro de textos en la parte de practicas  */
+
+/* Main */
+.contenedor{ /* contendor para ajustar y dejar margen es muy general, para usar despues */
+  margin:auto;
+  padding: 3.75rem 0;
+  width: 90%;
+  max-width: 62.5rem;
+  text-align: center;
+  overflow: hidden;
+}
+
+.contenedor h3{ /* h3 dentro de mi contenedor  */
+  font-size: 2rem;
+  color: var(--color1);
+  margin-bottom: var(--espacios);
+}
+
+.contenedor p{ /* p dentro de mi contenedor  */
+  font-size: var(--subtitulos);
+  font-weight: 300;
+  color: var(--color1);
+  margin-bottom: var(--espacios-contenido);
+}
+
+.boton1{ /* diseño de mi boton  */
+  display: inline-block;
+  text-align: center;
+  text-decoration: none;
+  margin-left: var(--espacios); /* root  */
+  margin-bottom: var(--espacios-contenido); /* root  */
+  padding: 0.4rem 0.75rem;
+  border: 1px solid var(--color1);
+  list-style: none;
+  color: var(--color1);
+}
+
+.boton1:hover{ /* cuando el mouse esta sobre el boton  */
+  background: var(--color1);
+  color:#fff;
+  cursor: pointer;
+}
+
+/* Footer */
+footer{ /* fondo de mi footer  */
+  background:url(img/hospital.jpg);
+}
+
+.marca-logo{ /* logo del footer  */
+  width: 30%;
+  margin: auto;
+  margin-bottom: var(--espacios);
+}
+.marca-logo img{ /* tamaño img dentro del footer dentro de marca-logo  */
+  width: 70%;
+}
+footer p{ /* p de footer  */
+  margin-bottom: 1rem;
+}
+
+/* Practicas 5, 6, 7 */
+.box-model5{
+  width: 300px;
+  border: 15px solid red;
+  padding: 50px;
+  margin: 20px;
+}
+.layout-overflow6{
+  color: aqua;
+  width: 50%;
+  height: 100px;
+  background-color: rgb(24, 24, 24);
+  overflow: scroll;
+  margin-bottom: 3rem;
+  padding: 0 0;
+}
+.scroll::-webkit-scrollbar {
+  width: 15px;
+  height: auto;
+}
+.scroll::-webkit-scrollbar-track {
+  border-radius: 10px;
+  background-color: rgba(255, 255, 255, 0.1);
+}
+.scroll::-webkit-scrollbar-thumb {
+  background-image: linear-gradient(45deg, #00fff2, #8edbff);
+  border-radius: 10px;
+}
+.transitions7{
+  color: aqua;
+  padding: .8rem 0 ;
+  width: 150px;
+  height: 100px;
+  background: rgb(19, 19, 19);
+  transition-property: height;
+  transition-duration: 2s;
+  transition-timing-function: linear;
+  transition-delay: 1s;
+  margin-bottom: 3rem;
+}
+.transitions7:hover {
+  height: auto;
+}

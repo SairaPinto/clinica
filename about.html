@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Clinica</title>
+    <link rel="stylesheet" href="styles/style.css">
+    <link href="https://fonts.googleapis.com/css?family=Lato:300,400,700,900&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <header>
+        <nav>
+            <div class="contenedor-nav">
+                <img class="logo" src="img/logo.jpg" alt="">
+                <div class="enlaces">
+                    <a href="index.html" id="enlace-inicio" class="btn-header">Inicio</a>
+                    <a href="login.html" id="enlace-equipo" class="btn-header">Iniciar Sesion</a>
+                    <a href="about.html" id="enlace-contacto" class="btn-header">About Us</a>
+                </div>
+            </div>
+        </nav>
+    </header>
+    <main>
+        <script>
+            /**
+             * Array con las imagenes y enlaces que se iran mostrando en la web
+             */
+            var imagenes=new Array(
+                ['img/logo.jpg'],
+                ['img/hospital.jpg']
+            );
+            var contador=0;
+         
+            /**
+             * Funcion para cambiar la imagen y link
+             */
+            function rotarImagenes()
+            {
+                // cambiamos la imagen y la url
+                contador++
+                document.getElementById("imagen").src=imagenes[contador%imagenes.length][0];
+            }
+         
+            /**
+             * Función que se ejecuta una vez cargada la página
+             */
+            onload=function()
+            {
+                // Cargamos una imagen aleatoria
+                rotarImagenes();
+         
+                // Indicamos que cada 5 segundos cambie la imagen
+                setInterval(rotarImagenes,2000);
+            }
+        </script>
+        <a href="" id="link"><img src="" id="imagen"></a>
+    </main>
+    <footer>
+        <div class="footer contenedor">
+            <p>Saira Pinto Huizar</p>
+            <p>Programacion para internet</p>
+            <p>Seccion D15</p>
+            <p>Ingenieria Informatica</p>
+            <p>CUCEI</p>
+        </div>
+    </footer>
+</body>
+</html>
