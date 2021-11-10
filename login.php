@@ -1,3 +1,7 @@
+<?php
+session_start();
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -34,21 +38,50 @@
                   Login
                   <span class="underline"></span>
                 </button>
-                <form class="form form-login">
+                <form class="form form-login" action="" method="POST">
                   <fieldset>
                     <legend>Please, enter your email and password for login.</legend>
                     <div class="input-block">
                       <label for="login-email">E-mail</label>
-                      <input id="login-email" type="email" required>
+                      <input name="email" id="login-email" type="email" required>
                     </div>
                     <div class="input-block">
                       <label for="login-password">Password</label>
-                      <input id="login-password" type="password" required>
+                      <input name="password" id="login-password" type="password" required>
                     </div>
                   </fieldset>
-                  <button type="submit" class="btn-login">Login</button>
+                  <button name="submit" type="submit" class="btn-login">Login</button>
                 </form>
               </div>
+
+              <?php
+              include ("DBconnection.php");
+              if(isset($_POST['submit'])){
+                $email= $_POST['email'];
+                $contra= $_POST['password'];
+                
+                $query= "select * from usuarios where email ='$email'";
+                $result=mysqli_query($conexion,$query);
+                if($result==false)
+                  echo '</br> Error en query';
+                else{
+                  if(mysqli_num_rows($result)==0){
+                    echo '</br> <p>no se encontró ningun usuario con ese email</p>';
+                  }else{
+                    $consulta=mysqli_fetch_array($result);
+                    if ($consulta['contrasenia']!=$contra)
+                      echo '</br> <p>contraseña incorrecta</p>';
+                    else{
+                      $_SESSION["usuario"]=$email;
+                      $_SESSION["nombre"]=$nombre;
+                      header("Location: indexProyecto.php");
+                    }
+                  }
+                }
+              }
+              mysqli_close($conexion);
+              ?>
+
               <div class="form-wrapper">
                 <button type="button" class="switcher switcher-signup">
                   Sign Up

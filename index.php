@@ -19,7 +19,7 @@
                 </a>
 
                 <nav class="navegacion">
-                    <a href="login.html">Iniciar Sesion</a>
+                    <a href="login.php">Iniciar Sesion</a>
                     <a href="about.html">Nosotros</a>
                 </nav>
             </div><!--barra-->  

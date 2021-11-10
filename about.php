@@ -32,7 +32,7 @@
                 <img src="img/nosotros1.jpg" alt="ImagenSobreNosotros">
             </div>
             <div class="texto-nosotros">
-                <blockquote>Lideres en tecnologia </blockquote>
+                <blockquote>Centro Medico Lider en Mexico</blockquote>
 
                 <p>
                     Lorem ipsum dolor sit amet consectetur, adipisicing elit. Nulla nobis 
@@ -52,30 +52,43 @@
     </main>
 
     <section class="contenedor seccion">
-        <h2 class="fw-300 centrar-texto">Mas sobre nosotros</h2>
+        <h2 class="fw-300 centrar-texto">Nuestros Servicios</h2>
         <div class="iconos-nosotros">
             <div class="icono">
                 <img src="img/icono1.svg" alt="icono1">
-                <h3 class="encabezado">Seguridad</h3>
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. 
-                Consectetur nemo perferendis corporis, placeat doloribus labore quas qui quod nobis. 
-                Deleniti doloribus similique libero ea nesciunt id neque hic eligendi itaque!</p>
+                <h3 class="encabezado">Urgencias</h3>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
             </div>
             
             <div class="icono">
                 <img src="img/icono2.svg" alt="icono2">
-                <h3>El Mejor Precio</h3>
-                <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Officia perferendis 
-                blanditiis alias voluptatum iure, laudantium dolorum delectus temporibus quod. Cum 
-                facilis adipisci ad facere veritatis voluptatem dolore nam omnis ducimus.</p>
+                <h3>Ambulancia</h3>
+                <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit.</p>
             </div>
             
             <div class="icono">
                 <img src="img/icono3.svg" alt="icono3">
-                <h3>A Tiempo</h3>
-                <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Itaque ducimus recusandae 
-                culpa, quibusdam, perspiciatis tenetur porro corrupti harum odio iure temporibus sed 
-                rem expedita odit dignissimos nihil, totam magni. Tempora.</p>
+                <h3>Banco de sangre</h3>
+                <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit.</p>
+            </div>
+        </div>
+        <div class="iconos-nosotros">
+            <div class="icono">
+                <img src="img/icono1.svg" alt="icono1">
+                <h3 class="encabezado">Laboratorio</h3>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+            </div>
+            
+            <div class="icono">
+                <img src="img/icono2.svg" alt="icono2">
+                <h3>Vacunacion</h3>
+                <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit.</p>
+            </div>
+            
+            <div class="icono">
+                <img src="img/icono3.svg" alt="icono3">
+                <h3>Terapia Intensiva</h3>
+                <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit.</p>
             </div>
         </div>
     </section>
