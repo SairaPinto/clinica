@@ -91,6 +91,13 @@
                 <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit.</p>
             </div>
         </div>
+        <h3>Ubicacion</h3>
+        <div class="contenedor seccion iconos-nosotros">
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d119445.50389888891!2d-103.47402158050245!3d20.682919304175375!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8428ae61a9704c13%3A0xafd8a5d47ed002ac!2sZapopan%2C%20Jal.!5e0!3m2!1ses!2smx!4v1636578553785!5m2!1ses!2smx"
+                width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+            <h4 class="fw-300">Nos ubicamos en Zapopan, te esperamos!</h4>
+        </div>
+        <br>
     </section>
 
     <footer class="site-footer seccion">
