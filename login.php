@@ -18,12 +18,12 @@ session_start();
     <header class="site-header">
         <div class="contenedor contenido-header">
             <div class="barra">
-                <a href="/">
+                <a href="index.php">
                     <img class="img-barra" src="img/PintoLogoB.png" alt="Logo">
                 </a>
 
                 <nav class="navegacion">
-                    <a href="about.html">Sobre Nosotros</a>
+                    <a href="about.php">Nosotros</a>
                 </nav>
             </div><!--barra-->
         </div><!--contenedor-->
@@ -38,7 +38,7 @@ session_start();
                   Login
                   <span class="underline"></span>
                 </button>
-                <form class="form form-login" action="" method="POST">
+                <form class="form form-login" action="logica/loguear.php" method="POST">
                   <fieldset>
                     <legend>Please, enter your email and password for login.</legend>
                     <div class="input-block">
@@ -54,60 +54,28 @@ session_start();
                 </form>
               </div>
 
-              <?php
-              include ("DBconnection.php");
-              if(isset($_POST['submit'])){
-                $email= $_POST['email'];
-                $contra= $_POST['password'];
-                
-                $query= "select * from usuarios where email ='$email'";
-                $result=mysqli_query($conexion,$query);
-                if($result==false)
-                  echo '</br> Error en query';
-                else{
-                  if(mysqli_num_rows($result)==0){
-                    echo '</br> <p>no se encontró ningun usuario con ese email</p>';
-                  }else{
-                    $consulta=mysqli_fetch_array($result);
-                    if ($consulta['contrasenia']!=$contra)
-                      echo '</br> <p>contraseña incorrecta</p>';
-                    else{
-                      $_SESSION["usuario"]=$email;
-                      $_SESSION["nombre"]=$nombre;
-                      header("Location: indexProyecto.php");
-                    }
-                  }
-                }
-              }
-              mysqli_close($conexion);
-              ?>
-
               <div class="form-wrapper">
                 <button type="button" class="switcher switcher-signup">
                   Sign Up
                   <span class="underline"></span>
                 </button>
-                <form class="form form-signup">
+                <form class="form form-signup" action="logica/register.php" method="POST">
                   <fieldset>
                     <legend>Please, enter your email, password and password confirmation for sign up.</legend>
                     <div class="input-block">
                         <label for="signup-email">Nombre</label>
-                        <input id="signup-email" type="text" required>
+                        <input name="name" id="signup-email" type="text" required>
                       </div>
                     <div class="input-block">
                       <label for="signup-email">E-mail</label>
-                      <input id="signup-email" type="email" required>
+                      <input name="email2" id="signup-email" type="email" required>
                     </div>
                     <div class="input-block">
                       <label for="signup-password">Password</label>
-                      <input id="signup-password" type="password" required>
-                    </div>
-                    <div class="input-block">
-                      <label for="signup-password-confirm">Confirm password</label>
-                      <input id="signup-password-confirm" type="password" required>
+                      <input name="passw" id="signup-password" type="password" required>
                     </div>
                   </fieldset>
-                  <button type="submit" class="btn-signup">Continue</button>
+                  <button name="submit" type="submit" class="btn-signup">Continue</button>
                 </form>
               </div>
             </div>

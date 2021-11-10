@@ -1,10 +1,15 @@
+<?php
+session_start();
+$usuario = $_SESSION['usuario'];
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Clinica</title>
+    <title>Bienvenido</title>
     <link rel="stylesheet" href="styles/style.css">
     <link rel="stylesheet" href="styles/normalize.css">
     <link href="https://fonts.googleapis.com/css?family=Lato:300,400,700,900&display=swap" rel="stylesheet">
@@ -14,15 +19,21 @@
     <header class="site-header inicio">
         <div class="contenedor contenido-header">
             <div class="barra">
-                <a href="index.php">
+                <a href="#">
                     <img class="img-barra" src="img/PintoLogoB.png" alt="Logo">
                 </a>
 
                 <nav class="navegacion">
-                    <a href="login.php">Iniciar Sesion</a>
-                    <a href="about.php">Nosotros</a>
+                    <a href="#">
+                        <?php echo 'User: ', $usuario;?>
+                    </a>
+                    <a href="#">Mis datos</a>
+                    <a href="#">Hacer cita</a>
+                    <a href="#">Admin</a>
+                    <a href="logica/logout.php">Cerrar Sesion</a>
                 </nav>
             </div><!--barra-->  
+            
         </div><!--contenedor-->
     </header>
 

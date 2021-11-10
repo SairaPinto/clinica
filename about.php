@@ -13,12 +13,12 @@
     <header class="site-header">
         <div class="contenedor contenido-header">
             <div class="barra">
-                <a href="/">
+                <a href="index.php">
                     <img class="img-barra" src="img/PintoLogoB.png" alt="Logo">
                 </a>
 
                 <nav class="navegacion">
-                    <a href="login.html">Iniciar Sesion</a>
+                    <a href="login.php">Iniciar Sesion</a>
                 </nav>
             </div><!--barra-->
         </div><!--contenedor-->
