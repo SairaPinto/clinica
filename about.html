@@ -3,67 +3,90 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Clinica</title>
-    <link rel="stylesheet" href="styles/style.css">
+    <title>Nosotros</title>
     <link href="https://fonts.googleapis.com/css?family=Lato:300,400,700,900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles/style.css">
+    <link rel="stylesheet" href="styles/normalize.css">
 </head>
 
 <body>
-    <header>
-        <nav>
-            <div class="contenedor-nav">
-                <img class="logo" src="img/logo.jpg" alt="">
-                <div class="enlaces">
-                    <a href="index.html" id="enlace-inicio" class="btn-header">Inicio</a>
-                    <a href="login.html" id="enlace-equipo" class="btn-header">Iniciar Sesion</a>
-                    <a href="about.html" id="enlace-contacto" class="btn-header">About Us</a>
-                </div>
-            </div>
-        </nav>
+    <header class="site-header">
+        <div class="contenedor contenido-header">
+            <div class="barra">
+                <a href="/">
+                    <img class="img-barra" src="img/PintoLogoB.png" alt="Logo">
+                </a>
+
+                <nav class="navegacion">
+                    <a href="login.html">Iniciar Sesion</a>
+                </nav>
+            </div><!--barra-->
+        </div><!--contenedor-->
     </header>
-    <main>
-        <script>
-            /**
-             * Array con las imagenes y enlaces que se iran mostrando en la web
-             */
-            var imagenes=new Array(
-                ['img/logo.jpg'],
-                ['img/hospital.jpg']
-            );
-            var contador=0;
-         
-            /**
-             * Funcion para cambiar la imagen y link
-             */
-            function rotarImagenes()
-            {
-                // cambiamos la imagen y la url
-                contador++
-                document.getElementById("imagen").src=imagenes[contador%imagenes.length][0];
-            }
-         
-            /**
-             * Función que se ejecuta una vez cargada la página
-             */
-            onload=function()
-            {
-                // Cargamos una imagen aleatoria
-                rotarImagenes();
-         
-                // Indicamos que cada 5 segundos cambie la imagen
-                setInterval(rotarImagenes,2000);
-            }
-        </script>
-        <a href="" id="link"><img src="" id="imagen"></a>
+
+    <main class="contenedor">
+        <h1 class="fw-300 centrar-texto">Conoce Sobre Nosotros</h1>
+
+        <div class="contenido-nosotros">
+            <div class="imagen">
+                <img src="img/nosotros1.jpg" alt="ImagenSobreNosotros">
+            </div>
+            <div class="texto-nosotros">
+                <blockquote>Lideres en tecnologia </blockquote>
+
+                <p>
+                    Lorem ipsum dolor sit amet consectetur, adipisicing elit. Nulla nobis 
+                    ex quisquam dolorum dicta reiciendis nisi suscipit saepe ratione in. 
+                    Nobis ad illum quibusdam unde magnam molestias sint consequuntur cupiditate.
+                    Lorem ipsum dolor sit amet consectetur, adipisicing elit. Nulla nobis 
+                    ex quisquam dolorum dicta reiciendis nisi suscipit saepe ratione in. 
+                    Nobis ad illum quibusdam unde magnam molestias sint consequuntur cupiditate.
+                    nisi suscipit saepe ratione in. Nobis ad illum quibusdam unde magnam molestias 
+                    sint consequuntur cupiditate.
+                    Nobis ad illum quibusdam unde magnam molestias sint consequuntur cupiditate.
+                    nisi suscipit saepe ratione in.
+                </p>
+
+            </div>
+        </div>
     </main>
-    <footer>
-        <div class="footer contenedor">
-            <p>Saira Pinto Huizar</p>
-            <p>Programacion para internet</p>
-            <p>Seccion D15</p>
-            <p>Ingenieria Informatica</p>
-            <p>CUCEI</p>
+
+    <section class="contenedor seccion">
+        <h2 class="fw-300 centrar-texto">Mas sobre nosotros</h2>
+        <div class="iconos-nosotros">
+            <div class="icono">
+                <img src="img/icono1.svg" alt="icono1">
+                <h3 class="encabezado">Seguridad</h3>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. 
+                Consectetur nemo perferendis corporis, placeat doloribus labore quas qui quod nobis. 
+                Deleniti doloribus similique libero ea nesciunt id neque hic eligendi itaque!</p>
+            </div>
+            
+            <div class="icono">
+                <img src="img/icono2.svg" alt="icono2">
+                <h3>El Mejor Precio</h3>
+                <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Officia perferendis 
+                blanditiis alias voluptatum iure, laudantium dolorum delectus temporibus quod. Cum 
+                facilis adipisci ad facere veritatis voluptatem dolore nam omnis ducimus.</p>
+            </div>
+            
+            <div class="icono">
+                <img src="img/icono3.svg" alt="icono3">
+                <h3>A Tiempo</h3>
+                <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Itaque ducimus recusandae 
+                culpa, quibusdam, perspiciatis tenetur porro corrupti harum odio iure temporibus sed 
+                rem expedita odit dignissimos nihil, totam magni. Tempora.</p>
+            </div>
+        </div>
+    </section>
+
+    <footer class="site-footer seccion">
+        <div class="contenedor contenedor-footer">
+            <p class="copyright">Saira Pinto Huizar</p>
+            <p class="copyright">Programacion para internet</p>
+            <p class="copyright">Seccion D15</p>
+            <p class="copyright">Ingenieria Informatica</p>
+            <p class="copyright">CUCEI</p>
         </div>
     </footer>
 </body>
