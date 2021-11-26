@@ -32,7 +32,7 @@ if(!isset($usuario)){
                         <?php echo 'User: ', $usuario;?>
                     </a>
                     <a href="#">Mis datos</a>
-                    <a href="#">Hacer cita</a>
+                    <a href="citas.php">Hacer cita</a>
                     <a href="#">Admin</a>
                     <a href="logica/logout.php">Cerrar Sesion</a>
                 </nav>
