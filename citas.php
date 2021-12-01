@@ -16,6 +16,7 @@ if(!isset($usuario)){
     <title>Cita</title>
     <link rel="stylesheet" href="styles/style.css">
     <link rel="stylesheet" href="styles/normalize.css">
+    <link rel="stylesheet" href="styles/form.css">
     <link href="https://fonts.googleapis.com/css?family=Lato:300,400,700,900&display=swap" rel="stylesheet">
 </head>
 
@@ -40,36 +41,56 @@ if(!isset($usuario)){
         </div><!--contenedor-->
     </header>
 
-    <section>
+    <section class="forms-section">
+        <h1 class="section-title">¡Realiza tu cita!</h1>
+        <div class="forms">
+            <div class="form-wrapper is-active">
+            <button type="button" class="switcher switcher-login">
+                Cita Consulta
+                <span class="underline"></span>
+            </button>
+            <form class="form form-login" action="logica/hacerCita.php" method="POST">
+                <div class="input-block">
+                    <label>Doctor</label>
+                    <input name="doctor" id="doctor" type="text" required>
+                </div>
+                <div class="input-block">
+                    <label>Fecha</label>
+                    <input name="fecha" id="fecha" type="date" required>
+                </div>
+                <div class="input-block">
+                    <label>Hora</label>
+                    <input name="hora" id="hora" type="time" required>
+                </div>
+                <button name="submit" type="submit" class="btn-login">Hacer cita</button>
+            </form>
+            </div>
 
-        <table>
-            <tr>
-                <td>id</td>
-                <td>horas</td>
-                <td>doctor</td>
-                <td>paciente</td>
-            </tr>
-            <?php
-                require 'logica/conexion.php';
-                $result = mysqli_query($conexion, "SELECT * FROM horarios");
-                while($mostrar = mysqli_fetch_array($result)){
-            ?>
-                    <tr>
-                        <td><?php echo $mostrar['id'] ?></td>
-                        <td><?php echo $mostrar['horas'] ?></td>
-                        <td><?php echo $mostrar['doctor'] ?></td>
-                        <td><?php echo $mostrar['paciente'] ?></td>
-                    </tr>
-            <?php
-                }
-            ?>
-        </table>
-        <form action="logica/hacercita.php" method="POST">
-            <input type="text" id="idCita">
-            <button name="submit" type="submit" class="btn-login">hacer cita</button>
-        </form>
-
+            <div class="form-wrapper">
+            <button type="button" class="switcher switcher-signup">
+                Cita Cirugia
+                <span class="underline"></span>
+            </button>
+            <form class="form form-signup" action="logica/hacerCita.php" method="POST">
+                <div class="input-block">
+                    <label for="signup-email">Doctor</label>
+                    <input name="name" id="signup-email" type="text" required>
+                </div>
+                <div class="input-block">
+                    <label for="signup-email">Fecha</label>
+                    <input name="fecha" id="fecha" type="date" required>
+                </div>
+                <div class="input-block">
+                    <label>Hora</label>
+                    <input name="hora" id="hora" type="time" required>
+                </div>
+                <button name="submit" type="submit" class="btn-signup">Hacer Cita</button>
+            </form>
+            </div>
+        </div>
     </section>
+
+    <input type="datetime">
 
     <footer class="site-footer seccion">
         <div class="contenedor contenedor-footer">
@@ -80,5 +101,15 @@ if(!isset($usuario)){
             <p class="copyright">CUCEI</p>
         </div>
     </footer>
+    <script>
+        const switchers = [...document.querySelectorAll('.switcher')]
+
+        switchers.forEach(item => {
+            item.addEventListener('click', function() {
+                switchers.forEach(item => item.parentElement.classList.remove('is-active'))
+                this.parentElement.classList.add('is-active')
+            })
+        })
+    </script>
 </body>
 </html>
