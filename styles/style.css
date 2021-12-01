@@ -301,3 +301,29 @@ h5{font-size: 2.2rem;}
   justify-content: space-between;
   align-items: center;
 }
+
+/* tabla */
+#tabla{
+  margin: auto;
+  margin-top: 40px;
+  width: 60%;
+}
+.rounded{
+  background:white;
+  text-align: left;
+  border-collapse: collapse;
+  border-spacing: 10;
+  border-radius: 25px;
+  -moz-border-radius: 15px;
+  -webkit-border-radius: 15px;
+  width: 75%;
+}
+th, td{
+  padding: 15px;
+}
+thead{
+  background: #2997c3;
+}
+tr:nth-child(even){
+  background-color: #ddd;
+}
