@@ -22,7 +22,7 @@ if(!isset($usuario)){
     #tabla{
         margin: auto;
         margin-top: 40px;
-        width: 60%;
+        width: 80%;
     }
     .rounded{
         background:white;
@@ -65,11 +65,27 @@ if(!isset($usuario)){
                     {
                 ?>
                 <tr>
-                    <td><?php echo $fila['tipo'] ?></td>
-                    <td><?php echo $fila['doctor'] ?></td>
+                    <td><?php
+                        echo $fila['tipo'] == 0 ? "Consulta" : "Cirugia";
+                    ?></td>
+                    <td><?php
+                        $id = $fila['doctor'];
+                        $query= "SELECT * FROM doctores WHERE id_doctor = $id";
+                        $result=mysqli_query($conexion,$query);
+
+                        $id=mysqli_fetch_assoc($result);
+                        echo $id['name'];
+                    ?></td>
                     <td><?php echo $fila['fecha'] ?></td>
                     <td><?php echo $fila['hora'] ?></td>
-                    <td><?php echo $fila['id_usuario'] ?></td>
+                    <td><?php
+                        $id = $fila['id_usuario'];
+                        $query= "SELECT * FROM usuarios WHERE ID_USUARIO = $id";
+                        $result=mysqli_query($conexion,$query);
+
+                        $id=mysqli_fetch_assoc($result);
+                        echo $id['EMAIL'];
+                    ?></td>
                 </tr>
                 <?php
                     }while($fila= mysqli_fetch_assoc($res)); 
