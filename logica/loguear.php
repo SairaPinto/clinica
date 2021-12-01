@@ -16,4 +16,10 @@ if($array['contar'] > 0){
     echo "Datos incorrectos";
 }
 
+$sql = "SELECT ROL FROM usuarios WHERE EMAIL = '$email'";
+$result = mysqli_query($conexion,$sql);
+$rol = mysqli_fetch_array($result);
+echo $rol['ROL'];
+$_SESSION['rol']= $rol['ROL'];
+
 ?>

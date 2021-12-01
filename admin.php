@@ -21,7 +21,6 @@ if(!isset($usuario)){
 
 <body>
     <?php include "logica/headerOthers.php"; ?>
-
     <section class="contenedor">
         <?php
             require 'logica/conexion.php';

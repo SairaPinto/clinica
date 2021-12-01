@@ -20,26 +20,8 @@ if(!isset($usuario)){
 </head>
 
 <body>
-    <header class="site-header inicio">
-        <div class="contenedor contenido-header">
-            <div class="barra">
-                <a href="#">
-                    <img class="img-barra" src="img/PintoLogoB.png" alt="Logo">
-                </a>
-
-                <nav class="navegacion">
-                    <a href="#">
-                        <?php echo 'User: ', $usuario;?>
-                    </a>
-                    <a href="citas.php">Hacer cita</a>
-                    <a href="#">Admin</a>
-                    <a href="logica/logout.php">Cerrar Sesion</a>
-                </nav>
-            </div><!--barra-->  
-            
-        </div><!--contenedor-->
-    </header>
-
+    <?php include "logica/header.php"; ?>
+    
     <section class="contenedor seccion">
         <h2 class="fw-300 centrar-texto">¡Cuida tu salud!</h2>
         <div>
