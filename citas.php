@@ -18,7 +18,31 @@ if(!isset($usuario)){
     <link rel="stylesheet" href="styles/normalize.css">
     <link href="https://fonts.googleapis.com/css?family=Lato:300,400,700,900&display=swap" rel="stylesheet">
 </head>
-
+<style>
+    #tabla{
+        margin: auto;
+        width: 100%;
+    }
+    .rounded{
+        background:white;
+        text-align: left;
+        border-collapse: collapse;
+        border-spacing: 10;
+        border-radius: 25px;
+        -moz-border-radius: 15px;
+        -webkit-border-radius: 15px;
+        width: 75%;
+    }
+    th, td{
+        padding: 1.5rem;
+    }
+    thead{
+        background: #2997c3;
+    }
+    tr:nth-child(even){
+        background-color: #ddd;
+    }
+</style>
 <body>
     <?php include "logica/headerOthers.php"; ?>
 
@@ -80,8 +104,6 @@ if(!isset($usuario)){
                 <button name="submit" type="submit" class="btn-login">Hacer cita</button>
             </form>
         </div>
-
-        
     </section>
 
     <section class="contenedor">
@@ -94,26 +116,45 @@ if(!isset($usuario)){
         $fila=mysqli_fetch_assoc($res);
         
 		?>
-    <div id="tabla">
-	 <table>
-        <thead>
-                <th>Tipo</th><th>Doctor</th><th>Fecha</th><th>Hora</th><th>Usuario</th>
-        </thead>
-	 	<?php  
-	 		do 
-	 		{
-	 	?>
-	 	<tr>
-	 		<td><?php echo $fila['tipo'] ?></td>
-			<td><?php echo $fila['doctor'] ?></td>
-            <td><?php echo $fila['fecha'] ?></td>
-            <td><?php echo $fila['hora'] ?></td>
-            <td><?php echo $fila['id_usuario'] ?></td>
-	 	</tr>
-	 	<?php
-	 		}while($fila= mysqli_fetch_assoc($res)); 
-	 	 ?>
+        <div id="tabla">
+        <table class="rounded">
+            <thead>
+                    <th>Tipo</th><th>Doctor</th><th>Fecha</th><th>Hora</th><th>Usuario</th>
+            </thead>
+            <?php  
+                do 
+                {
+            ?>
+            <tr>
+                <td><?php
+                    echo $fila['tipo'] == 0 ? "Consulta" : "Cirugia";
+                ?></td>
+                <td><?php 
+                    $id = $fila['doctor'];
+                    $query= "SELECT * FROM doctores WHERE id_doctor = $id";
+                    $result=mysqli_query($conexion,$query);
+
+                    $id=mysqli_fetch_assoc($result);
+                    echo $id['name'];
+                ?></td>
+                <td><?php echo $fila['fecha'] ?></td>
+                <td><?php echo $fila['hora'] ?></td>
+                <td><?php 
+                    $id = $fila['id_usuario'];
+                    $query= "SELECT * FROM usuarios WHERE ID_USUARIO = $id";
+                    $result=mysqli_query($conexion,$query);
+
+                    $id=mysqli_fetch_assoc($result);
+                    echo $id['NAME'];
+                ?></td>
+            </tr>
+            <?php
+                }while($fila= mysqli_fetch_assoc($res)); 
+            ?>
+          </table>
+        </div>
     </section>
+    <br> <br> <br>
 
     <script>
         function ocultar(){

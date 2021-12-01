@@ -22,7 +22,7 @@ if(!isset($usuario)){
     #tabla{
         margin: auto;
         margin-top: 40px;
-        width: 80%;
+        width: 100%;
     }
     .rounded{
         background:white;
