@@ -65,7 +65,14 @@ session_start();
                     <div class="input-block">
                         <label for="signup-email">Nombre</label>
                         <input name="name" id="signup-email" type="text" required>
-                      </div>
+                    </div>
+                    <div class="input-block">
+                      <select name="rol">
+                        <option value="">Seleccione una opcion</option>
+                        <option value="0">Admin</option>
+                        <option value="1">Cliente</option>
+                      </select>
+                    </div>
                     <div class="input-block">
                       <label for="signup-email">E-mail</label>
                       <input name="email2" id="signup-email" type="email" required>
