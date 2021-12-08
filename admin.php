@@ -48,7 +48,7 @@ if(!isset($usuario)){
     <?php include "logica/headerOthers.php"; ?>
     <?php require 'logica/conexion.php'; ?>
     <section class="contenedor">
-        <h1>Mis citas</h1>
+        <h1>Citas</h1>
         <?php
             $sql= "SELECT * FROM cita";
 
@@ -94,5 +94,34 @@ if(!isset($usuario)){
         </div>
         <br> <br> <br> <br>
     </section>
+    <section class="contenedor">
+        <h1>Registro de citas</h1>
+        <?php
+            $sql= "SELECT * FROM registrocitas";
+
+            $res=mysqli_query($conexion,$sql);
+            $fila=mysqli_fetch_assoc($res);
+		?>
+        <div id="tabla">
+            <table align=center class="rounded">
+                <thead>
+                        <th>ID</th><th>Hora</th>
+                </thead>
+                <?php  
+                    do 
+                    {
+                ?>
+                <tr>
+                    <td><?php echo $fila['id'] ?></td>
+                    <td><?php echo $fila['hora'] ?></td>
+                </tr>
+                <?php
+                    }while($fila= mysqli_fetch_assoc($res)); 
+                ?>
+            </table>
+        </div>
+        <br> <br> <br> <br>
+    </section>
+
 </body>
 </html>

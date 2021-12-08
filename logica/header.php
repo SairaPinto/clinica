@@ -2,10 +2,6 @@
 $usuario = $_SESSION['usuario'];
 $rol = $_SESSION['rol'];
 
-echo $usuario;
-
-echo $rol;
-
 ?>
 <header class="site-header inicio">
     <div class="contenedor contenido-header">
